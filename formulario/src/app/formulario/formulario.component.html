@@ -1,0 +1,33 @@
+<form  (ngSubmit)="onSubmit(formulario)" #formulario="ngForm">
+  <div>
+    <label class="label-personalizado" style="margin-right: 30px;" for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" required
+           [(ngModel)]="formData.nombre" #nombreInput="ngModel" trimValidator>
+    <div class="validation-icon" [class.valid]="nombreInput.valid && nombreInput.dirty"
+         [class.invalid]="nombreInput.invalid && nombreInput.dirty"></div>
+  </div>
+  <br>
+  <div>
+    <label class="label-personalizado" style="margin-right: 25px;" for="apellido">Apellido</label>
+    <input type="text" id="apellido" name="apellido" required
+           [(ngModel)]="formData.apellido" #apellidoInput="ngModel" trimValidator>
+    <div class="validation-icon" [class.valid]="apellidoInput.valid && apellidoInput.dirty"
+         [class.invalid]="apellidoInput.invalid && apellidoInput.dirty"></div>
+  </div>
+  <br>
+  <div>
+    <label class="label-personalizado" style="margin-right: 35px;" for="asunto">Asunto</label>
+    <input type="text" id="asunto" name="asunto" required
+           [(ngModel)]="formData.asunto" #asuntoInput="ngModel" trimValidator>
+    <div class="validation-icon" [class.valid]="asuntoInput.valid && asuntoInput.dirty"
+         [class.invalid]="asuntoInput.invalid && asuntoInput.dirty"></div>
+  </div>
+  <br>
+  <div>
+    <label class="label-personalizado" style="margin-right: 30px;" for="archivo">Archivo</label>
+    <input type="file" id="archivo" name="archivo" (change)="onFileSelected($event)" accept=".pdf" required>
+
+  </div>
+  <br>
+  <button type="submit" class="boton-enviar" [disabled]="!formulario.form.valid">Enviar</button>
+</form>

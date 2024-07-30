@@ -1,0 +1,9 @@
+.titulo-personalizado {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+}
+.container
+{
+  padding: 3rem;
+}

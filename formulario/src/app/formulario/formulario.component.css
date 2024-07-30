@@ -1,0 +1,46 @@
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+/* Clase específica para el borde verde */
+.green {
+  border-left: 5px solid #42A948;
+}
+
+/* Clase específica para el borde rojo */
+.red {
+  border-left: 5px solid #a94442;
+}
+
+
+
+.container
+{
+  padding: 3rem;
+}
+
+
+.boton-enviar {
+  border: 2px solid #040709; /* Color negro para el borde */
+  padding: 10px 20px; /* Espaciado interno */
+  background-color: #f5ffff; /* Color de fondo */
+  color: #190202; /* Color del texto */
+  font-size: 16px; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambia el cursor a mano */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+.boton-enviar:hover {
+  background-color: #0056b3; /* Cambia el color de fondo al pasar el mouse */
+  border-color: #0056b3; /* Cambia el color del borde al pasar el mouse */
+}
+
+.label-personalizado {
+  font-weight: bold;
+  font-size: 20px;
+}

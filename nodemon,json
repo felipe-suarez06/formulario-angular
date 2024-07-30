@@ -1,0 +1,9 @@
+{
+  "execMap": {
+    "js": "node --loader ts-node/esm"
+  },
+  "watch": ["."],
+  "ext": "js,json",
+  "ignore": ["node_modules", "dist"],
+  "exec": "babel-node index.js"
+}
