@@ -1,0 +1,12 @@
+<div *ngIf="formulario">
+  <h2>Recuperación del Formulario</h2>
+  <p><strong>Nombre:</strong> {{ formulario.nombre }}</p>
+  <p><strong>Apellido:</strong> {{ formulario.apellido }}</p>
+  <p><strong>Asunto:</strong> {{ formulario.asunto }}</p>
+  <p><strong>Fecha de Registro:</strong> {{ formulario.fecharegistro }}</p>
+
+  <div *ngIf="formulario.archivo">
+    <h3>Archivo:</h3>
+    <iframe *ngIf="archivoUrl" [src]="archivoUrl" width="600" height="400"></iframe>
+  </div>
+</div>

@@ -16,6 +16,8 @@ import pako from 'pako';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent {
+  title = 'FORMULARIO';
+  
   formData: any = {
     nombre: '',
     apellido: '',
