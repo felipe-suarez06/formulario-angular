@@ -17,7 +17,7 @@ import pako from 'pako';
 })
 export class FormularioComponent {
   title = 'FORMULARIO';
-  
+
   formData: any = {
     nombre: '',
     apellido: '',
@@ -131,31 +131,6 @@ export class FormularioComponent {
       reader.onloadend = () => {
         compressedBase64 = reader.result as string;
         const base64 = compressedBase64.split(',')[1]; // Obtener solo la parte base64
-        resolve(base64);
-      };
-      reader.onerror = () => reject('Error en la conversión a base64');
-      reader.readAsDataURL(blob);
-    });
-  }
-
-  private async decompressBase64(compressedBase64: string): Promise<string> {
-    const binaryString = atob(compressedBase64); // Decodificar base64 a texto binario
-    const binaryLength = binaryString.length;
-    const bytes = new Uint8Array(binaryLength);
-    for (let i = 0; i < binaryLength; i++) {
-      bytes[i] = binaryString.charCodeAt(i); // Convertir texto binario a array de bytes
-    }
-    const decompressed = pako.inflate(bytes); // Descomprimir los bytes
-
-    // Convertir ArrayBuffer a base64
-    const blob = new Blob([decompressed], { type: 'application/octet-stream' });
-    const reader = new FileReader();
-    let decompressedBase64 = '';
-
-    return new Promise<string>((resolve, reject) => {
-      reader.onloadend = () => {
-        decompressedBase64 = reader.result as string;
-        const base64 = decompressedBase64.split(',')[1]; // Obtener solo la parte base64
         resolve(base64);
       };
       reader.onerror = () => reject('Error en la conversión a base64');
